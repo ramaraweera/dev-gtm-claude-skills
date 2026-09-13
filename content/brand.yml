@@ -1,0 +1,86 @@
+# Brand & Editorial Voice Configuration
+# Domain-agnostic — adapt per-business by changing top-level fields only.
+# To use for a different domain, fork this file and set:
+#   domain, company_name, service_lines, and audience_model
+
+domain: ""                     # e.g. "molay.ai" or "promoga.com"
+company_name: ""               # e.g. "Molay" or "Promoga"
+company_tagline: ""             # optional
+
+# ── audience_model ──────────────────────────────────────
+# One of these audiences applies per post. The blog workflow
+# selects the relevant one when building the content brief.
+
+audience_model:
+  engineering_leader:
+    title: "Engineering Leaders & AI Product Teams"
+    concerns:
+      - build-vs-buy evaluation
+      - cost and latency benchmarks
+      - architecture and security trade-offs
+      - team capacity and time-to-value
+  developer_advocate:
+    title: "Developer Advocates & Technical Practitioners"
+    concerns:
+      - implementation tutorials with working code
+      - API version details and prerequisites
+      - failure cases and debugging guidance
+      - reproducible benchmarks
+  business_buyer:
+    title: "Founders, Operations Directors & Non-Technical Buyers"
+    concerns:
+      - problem-solution fit
+      - scoping and budgeting guidance
+      - when to hire internally vs consult vs defer
+      - procurement questions (security, data ownership, SLA)
+
+# ── voice ───────────────────────────────────────────────
+
+voice:
+  tone: "technically precise, practical, direct"
+  evidence_first: true
+  avoids:
+    - "inflated claims or guarantees"
+    - "generic AI industry news"
+    - "padding for word count"
+    - "filler headings and repetitive conclusions"
+    - "vague AI phrases ('seamless', 'robust', 'cutting-edge')"
+    - "forced metaphors and stock formulas"
+  prefers:
+    - "specific numbers, benchmarks, and measured outcomes"
+    - "real trade-offs and honest limitations"
+    - "short paragraphs (2-4 sentences before a line break)"
+    - "answer-first section structure"
+    - "primary-source citations over secondary summaries"
+
+# ── content_policy ──────────────────────────────────────
+
+content_policy:
+  min_word_count: 400
+  default_word_count: 600
+  max_word_count_explainers: 1300
+  max_word_count_comparisons: 1800
+  no_invented_proof: true
+  no_invented_client_stories: true
+  no_fabricated_statistics: true
+  evidence_policy:
+    - "cite primary documentation, official releases, papers, specs"
+    - "prefer GitHub repos, product docs, standards bodies"
+    - "never rely on search snippets as evidence"
+    - "flag unverifiable claims with [FACT CHECK REQUIRED]"
+    - "include original example, diagram, benchmark, or code snippet per post"
+
+# ── quality_gates ──────────────────────────────────────
+
+quality_gates:
+  - "answer the target query in the first 40-80 words"
+  - "≥1 verified statistic or original data point per draft"
+  - "inline citations to authoritative primary sources"
+  - "GitHub/primary-source links where relevant technical claims are made"
+  - "no unsupported statistics"
+  - "cite every factual claim"
+  - "include an original example, diagram, benchmark, or code snippet"
+  - "generate Article and FAQPage schema only when genuinely appropriate"
+  - "FAQ section only if it adds real value not already covered in body"
+  - "author E-E-A-T byline present"
+  - "anti-AI slop editorial pass (remove vague phrases, filler, repetitive conclusions)"
